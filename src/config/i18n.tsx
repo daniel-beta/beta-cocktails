@@ -9,6 +9,8 @@ const resources = {
       noCocktailsFound: 'No cocktails found with the term "{{term}}"',
       ingredients: "Ingredients",
       instructions: "Instructions",
+      previous: "Previous",
+      next: "Next",
     },
   },
   es: {
@@ -18,6 +20,8 @@ const resources = {
       noCocktailsFound: 'No se encontraron cócteles con el término "{{term}}"',
       ingredients: "Ingredientes",
       instructions: "Instrucciones",
+      previous: "Anterior",
+      next: "Siguiente",
     },
   },
   de: {
@@ -27,6 +31,8 @@ const resources = {
       noCocktailsFound: 'Keine Cocktails gefunden mit dem Begriff "{{term}}"',
       ingredients: "Zutaten",
       instructions: "Anleitung",
+      previous: "Zurück",
+      next: "Weiter",
     },
   },
   fr: {
@@ -36,6 +42,8 @@ const resources = {
       noCocktailsFound: 'Aucun cocktail trouvé avec le terme "{{term}}"',
       ingredients: "Ingrédients",
       instructions: "Instructions",
+      previous: "Précédent",
+      next: "Suivant",
     },
   },
   it: {
@@ -45,6 +53,8 @@ const resources = {
       noCocktailsFound: 'Nessun cocktail trovato con il termine "{{term}}"',
       ingredients: "Ingredienti",
       instructions: "Istruzioni",
+      previous: "Precedente",
+      next: "Successivo",
     },
   },
 };

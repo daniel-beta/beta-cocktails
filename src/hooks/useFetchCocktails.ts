@@ -13,12 +13,10 @@ export const useFetchCocktails = () => {
       fetchCocktailsByName(searchTerm),
     ]);
 
-    
     const combinedCocktails: Cocktail[] = [
         ...cocktailsByIngredient,
         ...cocktailsByName.filter((c: { idDrink: string; }) => !cocktailsByIngredient.some((ci: { idDrink: string; }) => ci.idDrink === c.idDrink)),
     ];
-    console.log(combinedCocktails)
 
     return combinedCocktails;
   }, [fetchCocktailsByIngredient, fetchCocktailsByName]);
