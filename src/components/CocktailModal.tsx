@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 import { Cocktail } from '../types/cocktail';
+import { t } from 'i18next';
 
 interface CocktailModalProps {
   idDrink: string;
@@ -8,6 +10,7 @@ interface CocktailModalProps {
 }
 
 const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }) => {
+  const { i18n } = useTranslation();
   const [cocktailDetails, setCocktailDetails] = useState<Cocktail | null>(null);
 
   useEffect(() => {
@@ -46,6 +49,22 @@ const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }) => {
     }
   };
 
+  // Selecciona las instrucciones basadas en el idioma
+  const instructions = () => {
+    switch (i18n.language) {
+      case 'es':
+        return cocktailDetails.strInstructionsES;
+      case 'de':
+        return cocktailDetails.strInstructionsDE;
+      case 'fr':
+        return cocktailDetails.strInstructionsFR;
+      case 'it':
+        return cocktailDetails.strInstructionsIT;
+      default:
+        return cocktailDetails.strInstructions;
+    }
+  };
+
   return (
     <div 
       className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
@@ -55,14 +74,14 @@ const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }) => {
         <button onClick={onClose} className="absolute top-2 right-2 text-gray-500">X</button>
         <h2 className="text-2xl font-bold mb-2">{cocktailDetails.strDrink}</h2>
         <img src={cocktailDetails.strDrinkThumb} alt={cocktailDetails.strDrink} className="w-full h-64 object-cover mb-4 rounded-lg" />
-        <h3 className="text-xl font-semibold">Ingredients</h3>
+        <h3 className="text-xl font-semibold">{t('ingredients')}</h3>
         <ul className="list-disc ml-5 mb-4">
           {generateIngredientsList().map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        <h3 className="text-xl font-semibold">Instructions</h3>
-        <p>{cocktailDetails.strInstructions}</p>
+        {instructions() && <h3 className="text-xl font-semibold">{t('instructions')}</h3>}
+        <p>{instructions()}</p>
       </div>
     </div>
   );

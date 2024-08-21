@@ -1,0 +1,61 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+const resources = {
+  en: {
+    translation: {
+      searchTitle: "Cocktail Search",
+      searchPlaceholder: "Search for a cocktail by name or ingredient...",
+      noCocktailsFound: 'No cocktails found with the term "{{term}}"',
+      ingredients: "Ingredients",
+      instructions: "Instructions",
+    },
+  },
+  es: {
+    translation: {
+      searchTitle: "Búsqueda de Cócteles",
+      searchPlaceholder: "Busca un cóctel por nombre o ingrediente...",
+      noCocktailsFound: 'No se encontraron cócteles con el término "{{term}}"',
+      ingredients: "Ingredientes",
+      instructions: "Instrucciones",
+    },
+  },
+  de: {
+    translation: {
+      searchTitle: "Cocktail-Suche",
+      searchPlaceholder: "Suche nach einem Cocktailnamen oder -zutat...",
+      noCocktailsFound: 'Keine Cocktails gefunden mit dem Begriff "{{term}}"',
+      ingredients: "Zutaten",
+      instructions: "Anleitung",
+    },
+  },
+  fr: {
+    translation: {
+      searchTitle: "Recherche de Cocktails",
+      searchPlaceholder: "Cherchez un cocktail par nom ou ingrédient...",
+      noCocktailsFound: 'Aucun cocktail trouvé avec le terme "{{term}}"',
+      ingredients: "Ingrédients",
+      instructions: "Instructions",
+    },
+  },
+  it: {
+    translation: {
+      searchTitle: "Ricerca Cocktail",
+      searchPlaceholder: "Cerca un cocktail per nome o ingrediente...",
+      noCocktailsFound: 'Nessun cocktail trovato con il termine "{{term}}"',
+      ingredients: "Ingredienti",
+      instructions: "Istruzioni",
+    },
+  },
+};
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en", // Idioma por defecto
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
+export default i18n;
