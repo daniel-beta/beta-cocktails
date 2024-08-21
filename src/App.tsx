@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import CocktailSearch from './components/CocktailSearch'
+import CocktailSearchPage from './pages/CocktailSearchPage'
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <CocktailSearch />
+    <CocktailSearchPage />
   </StrictMode>,
 )
