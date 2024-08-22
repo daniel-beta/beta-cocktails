@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const LanguageSelector: React.FC = () => {
+export const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
 
   const handleChangeLanguage = (
@@ -13,7 +13,7 @@ const LanguageSelector: React.FC = () => {
   return (
     <select
       onChange={handleChangeLanguage}
-      className="border p-2 rounded-md"
+      className="border border-gray-300 dark:border-gray-600 p-2 rounded-md bg-white dark:bg-gray-800 text-black dark:text-white"
       defaultValue={i18n.language}
     >
       <option value="es">Español 🇨🇴</option>
@@ -24,5 +24,3 @@ const LanguageSelector: React.FC = () => {
     </select>
   );
 };
-
-export default LanguageSelector;

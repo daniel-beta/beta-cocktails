@@ -13,7 +13,7 @@ interface CocktailGridProps {
   searchTerm: string;
 }
 
-const CocktailGrid: React.FC<CocktailGridProps> = ({
+export const CocktailGrid: React.FC<CocktailGridProps> = ({
   cocktails,
   onCocktailSelect,
   searchTerm,
@@ -26,7 +26,7 @@ const CocktailGrid: React.FC<CocktailGridProps> = ({
         cocktails.map((cocktail) => (
           <div
             key={cocktail.idDrink}
-            className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer"
             onClick={() => onCocktailSelect(cocktail.idDrink)}
           >
             <img
@@ -35,15 +35,17 @@ const CocktailGrid: React.FC<CocktailGridProps> = ({
               className="w-full h-48 object-cover min-h-72"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold">{cocktail.strDrink}</h2>
+              <h2 className="text-xl font-bold text-black dark:text-white">
+                {cocktail.strDrink}
+              </h2>
             </div>
           </div>
         ))
       ) : (
-        <p>{t("noCocktailsFound", { term: searchTerm })}</p>
+        <p className="text-black dark:text-white">
+          {t("noCocktailsFound", { term: searchTerm })}
+        </p>
       )}
     </div>
   );
 };
-
-export default CocktailGrid;

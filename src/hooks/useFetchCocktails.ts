@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
-import { useFetchCocktailsByIngredient } from './useFetchCocktailsByIngredient';
-import { useFetchCocktailsByName } from './useFetchCocktailsByName';
 import { Cocktail } from '../types/cocktail'
+import { useFetchCocktailsByIngredient, useFetchCocktailsByName } from '.';
 
 export const useFetchCocktails = () => {
   const fetchCocktailsByIngredient = useFetchCocktailsByIngredient();

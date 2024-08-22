@@ -6,17 +6,19 @@ interface CocktailItemProps {
   onSelect: (idDrink: string) => void;
 }
 
-const CocktailItem: React.FC<CocktailItemProps> = ({ cocktail, onSelect }) => (
+export const CocktailItem: React.FC<CocktailItemProps> = ({ cocktail, onSelect }) => (
   <div
     key={cocktail.idDrink}
-    className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+    className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer"
     onClick={() => onSelect(cocktail.idDrink)}
   >
-    <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} className="w-full h-48 object-cover min-h-72" />
+    <img
+      src={cocktail.strDrinkThumb}
+      alt={cocktail.strDrink}
+      className="w-full h-48 object-cover min-h-72"
+    />
     <div className="p-4">
-      <h2 className="text-xl font-bold">{cocktail.strDrink}</h2>
+      <h2 className="text-xl font-bold text-black dark:text-white">{cocktail.strDrink}</h2>
     </div>
   </div>
 );
-
-export default CocktailItem;

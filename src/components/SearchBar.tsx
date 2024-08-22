@@ -6,7 +6,7 @@ interface SearchBarProps {
   onSearchTermChange: (term: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchTermChange }) => (
+export const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchTermChange }) => (
   <div className="relative">
     <input
       type="text"
@@ -25,5 +25,3 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchTermChange })
     )}
   </div>
 );
-
-export default SearchBar;

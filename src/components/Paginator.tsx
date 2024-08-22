@@ -10,7 +10,7 @@ interface PaginatorProps {
   maxPagesToShow: number;
 }
 
-const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageChange, maxPagesToShow }) => {
+export const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageChange, maxPagesToShow }) => {
   const pages: number[] = [];
 
   const startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
@@ -25,7 +25,7 @@ const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageCh
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 dark:hover:bg-white/10 active:bg-gray-900/20 dark:active:bg-white/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
       >
         <LeftArrowIcon />
@@ -39,8 +39,8 @@ const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageCh
             onClick={() => onPageChange(page)}
             className={`relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all ${
               page === currentPage
-                ? 'bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20'
-                : 'text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20'
+                ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-md shadow-gray-900/10 dark:shadow-white/10 hover:shadow-lg hover:shadow-gray-900/20 dark:hover:shadow-white/20'
+                : 'text-gray-900 dark:text-white hover:bg-gray-900/10 dark:hover:bg-white/10 active:bg-gray-900/20 dark:active:bg-white/20'
             } disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none`}
             type="button"
           >
@@ -54,7 +54,7 @@ const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageCh
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 dark:hover:bg-white/10 active:bg-gray-900/20 dark:active:bg-white/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
       >
         {t("next")}
@@ -63,5 +63,3 @@ const Paginator: React.FC<PaginatorProps> = ({ currentPage, totalPages, onPageCh
     </div>
   );
 };
-
-export default Paginator;

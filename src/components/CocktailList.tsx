@@ -1,13 +1,13 @@
 import React from 'react';
-import CocktailItem from './CocktailItem';
 import { Cocktail } from '../types/cocktail';
+import { CocktailItem } from '.';
 
 interface CocktailListProps {
   cocktails: Cocktail[];
   onSelectCocktail: (idDrink: string) => void;
 }
 
-const CocktailList: React.FC<CocktailListProps> = ({ cocktails, onSelectCocktail }) => (
+export const CocktailList: React.FC<CocktailListProps> = ({ cocktails, onSelectCocktail }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {cocktails.length > 0 ? (
       cocktails.map((cocktail) => (
@@ -22,5 +22,3 @@ const CocktailList: React.FC<CocktailListProps> = ({ cocktails, onSelectCocktail
     )}
   </div>
 );
-
-export default CocktailList;
