@@ -27,6 +27,14 @@ export const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }
     fetchCocktailDetails();
   }, [idDrink]);
 
+  useEffect(() => {
+    document.body.classList.add('overflow-hidden');
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, []);
+
   if (!cocktailDetails) return null;
 
   const generateIngredientsList = () => {
@@ -50,7 +58,6 @@ export const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }
     }
   };
 
-  // Selecciona las instrucciones basadas en el idioma
   const instructions = () => {
     switch (i18n.language) {
       case 'es':
@@ -68,7 +75,7 @@ export const CocktailModal: React.FC<CocktailModalProps> = ({ idDrink, onClose }
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center"
+      className="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-90 flex justify-center items-center"
       onClick={handleOutsideClick}
     >
       <div className="bg-white dark:bg-gray-900 p-4 rounded-lg max-w-lg w-full relative text-black dark:text-white">
