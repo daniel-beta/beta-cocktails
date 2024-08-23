@@ -19,17 +19,17 @@ export const useCocktailSearch = () => {
   const fetchCocktails = useFetchCocktails();
 
   useEffect(() => {
-    if (searchTerm) {
-      fetchCocktails(searchTerm).then((cocktails) => setCocktails(cocktails));
-    } else {
-      axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
-        .then(response => {
-          setCocktails(response.data.drinks);
-        })
-        .catch(error => {
-          console.error('Error fetching the cocktail data:', error);
-        });
-    }
+    const fetchResults = async () => {
+      if (searchTerm) {
+        const fetchedCocktails = await fetchCocktails(searchTerm);
+        setCocktails(fetchedCocktails);
+      } else {
+        const defaultCocktails = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
+        setCocktails(defaultCocktails.data.drinks);
+      }
+    };
+
+    fetchResults();
   }, [searchTerm, fetchCocktails]);
 
   useEffect(() => {
