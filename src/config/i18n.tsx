@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       searchTitle: "Cocktail Search",
+      searchTitleMobile: "Cocktails",
       searchPlaceholder: "Search for a cocktail by name or ingredient...",
       noCocktailsFound: 'No cocktails found with the term "{{term}}"',
       ingredients: "Ingredients",
@@ -16,6 +17,7 @@ const resources = {
   es: {
     translation: {
       searchTitle: "Búsqueda de Cócteles",
+      searchTitleMobile: "Cócteles",
       searchPlaceholder: "Busca un cóctel por nombre o ingrediente...",
       noCocktailsFound: 'No se encontraron cócteles con el término "{{term}}"',
       ingredients: "Ingredientes",
@@ -27,6 +29,7 @@ const resources = {
   de: {
     translation: {
       searchTitle: "Cocktail-Suche",
+      searchTitleMobile: "Cocktails",
       searchPlaceholder: "Suche nach einem Cocktailnamen oder -zutat...",
       noCocktailsFound: 'Keine Cocktails gefunden mit dem Begriff "{{term}}"',
       ingredients: "Zutaten",
@@ -38,6 +41,7 @@ const resources = {
   fr: {
     translation: {
       searchTitle: "Recherche de Cocktails",
+      searchTitleMobile: "Cocktails",
       searchPlaceholder: "Cherchez un cocktail par nom ou ingrédient...",
       noCocktailsFound: 'Aucun cocktail trouvé avec le terme "{{term}}"',
       ingredients: "Ingrédients",
@@ -49,6 +53,7 @@ const resources = {
   it: {
     translation: {
       searchTitle: "Ricerca Cocktail",
+      searchTitleMobile: "Cocktail",
       searchPlaceholder: "Cerca un cocktail per nome o ingrediente...",
       noCocktailsFound: 'Nessun cocktail trovato con il termine "{{term}}"',
       ingredients: "Ingredienti",

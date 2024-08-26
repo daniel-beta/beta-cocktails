@@ -24,12 +24,15 @@ const CocktailSearchPage: React.FC = () => {
   } = useCocktailSearch();
 
   const [isDarkMode, setIsDarkMode] = useDarkMode();
+  const isMobile = window.innerWidth < 768
 
   return (
     <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
       <div className="container mx-auto p-4">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-bold">🍸 {t("searchTitle")}</h1>
+        <h1 className="text-2xl font-bold">
+          🍸 {isMobile ? t("searchTitleMobile") : t("searchTitle")}
+        </h1>
           <div className="flex items-center space-x-4">
             <LanguageSelector />
             <button
